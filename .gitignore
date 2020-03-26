@@ -104,4 +104,8 @@ dist
 # TernJS port file
 .tern-port
 
+# Ingnore package-lock
 package-lock.json
+backend/package-lock.json
+frontend/package-lock.json
+
