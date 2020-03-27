@@ -110,5 +110,8 @@ backend/package-lock.json
 frontend/package-lock.json
 
 # Ignore DB
+db.sqlite
+database/db.sqlite
+src/database/db.sqlite
 backend/src/database/db.sqlite
 
