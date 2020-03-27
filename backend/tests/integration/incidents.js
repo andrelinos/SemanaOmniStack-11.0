@@ -10,9 +10,10 @@ describe('INCIDENTS', ()=> {
    await connection.migrate.latest(); // Estrutura o banco
   });
 
-  // Finaliza a conexão com o banco de dados
+  
   afterAll(async() => {
-    await connection.destroy();
+    await connection.destroy(); // Finaliza a conexão com o banco de dados
+    await connection.migrate.rollback(); // Limpa o banco para o próximo teste
   });
 
 
