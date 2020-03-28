@@ -9,7 +9,7 @@ module.exports = {
 
     const ong_id = request.headers.authorization;
 
-    const [id] = await connection("incidents").insert({
+    const [id] = await connection('incidents').insert({
       title,
       description,
       value,
