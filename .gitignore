@@ -115,3 +115,13 @@ database/db.sqlite
 src/database/db.sqlite
 backend/src/database/db.sqlite
 
+test.sqlite
+database/test.sqlite
+src/database/test.sqlite
+backend/src/database/test.sqlite
+
+
+
+
+
+

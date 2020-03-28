@@ -1,3 +1,6 @@
+const JWT = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 const genarateUniqueId = require('../utils/generateUniqueId');
 
 const connection = require('../database/connection');
@@ -10,7 +13,10 @@ module.exports = {
     const { name, email, password, whatsapp, city, uf } = request.body;
 
     const id = genarateUniqueId();
-    const password_hash = password;
+
+    if (password) {
+      password_hash = await bcrypt.hash(password, 8);
+    }
 
     const ongExist = await connection('ongs')
       .where('email', email)

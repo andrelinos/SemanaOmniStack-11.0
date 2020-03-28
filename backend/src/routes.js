@@ -9,11 +9,11 @@ const SessionController = require('./controllers/SessionController');
 const routes = express.Router();
 
 // Login
-routes.post('/sessions', celebrate({
+routes.post('/sessions', /* celebrate({
   [Segments.BODY]: Joi.object().keys({
     id: Joi.string().required(),
   })
-}), SessionController.create);
+}), */ SessionController.create);
 
 // Ongs routes
 routes.post('/ongs', celebrate({
