@@ -13,14 +13,13 @@ describe('INCIDENTS', ()=> {
   
   afterAll(async() => {
     await connection.destroy(); // Finaliza a conexão com o banco de dados
-    await connection.migrate.rollback(); // Limpa o banco para o próximo teste
   });
 
 
   // Executa o teste de inserção de dados no banco de dados
   it('should be able to create a new INCIDENT', async ()=> {
     const response = await request(app)
-      .post('/incidentes')
+      .post('/incidents')
       .set('Authorization', '85f2de2a')
       .send({
         title: "Cavalo atropelado por caminhão e fica com pata quebrada",
@@ -28,6 +27,6 @@ describe('INCIDENTS', ()=> {
         value: 520
       });
 
-      expect(response.body).toHaveProperty('title');
+      expect(response.body).toHaveProperty('id');
   });
 });

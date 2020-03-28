@@ -20,6 +20,7 @@ routes.post('/ongs', celebrate({
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required().max(100),
     email: Joi.string().required().email().max(100),
+    password: Joi.string().required().min(8).max(100),
     whatsapp: Joi.string().required().min(10).max(13).regex(/^[0-9]*$/, { name: 'numbers' }),
     city: Joi.string().required().max(100),
     uf: Joi.string().required().length(2),

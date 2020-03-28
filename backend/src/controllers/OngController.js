@@ -7,14 +7,26 @@ module.exports = {
    *  Create Ongs
    */
   async create(request, response) {
-    const { name, email,  whatsapp, city, uf } = request.body;
+    const { name, email, password, whatsapp, city, uf } = request.body;
 
     const id = genarateUniqueId();
+    const password_hash = password;
 
-    await connection('ongs').insert({
+    const ongExist = await connection('ongs')
+      .where('email', email)
+      .first();
+
+    if (ongExist) {
+      return response
+        .status(400)
+        .json({ error: 'ONG already exist.' });
+    }
+
+    const ongData = await connection('ongs').insert({
       id,
       name,
       email,
+      password_hash,
       whatsapp,
       city,
       uf,
@@ -26,14 +38,14 @@ module.exports = {
   /**
    *  List Ongs
    */
-  async index (request, response) {
+  async index(request, response) {
     const { page = 1 } = request.query;
 
     const [count] = await connection('ongs').count();
 
     const ongs = await connection('ongs')
       .limit(5)
-      .offset((page - 1) * 5)  
+      .offset((page - 1) * 5)
       .select([
         'ongs.*',
         'ongs.name',
@@ -41,10 +53,10 @@ module.exports = {
         'ongs.whatsapp',
         'ongs.city',
         'ongs.uf'
-       ]);
+      ]);
 
     response.header('X-Total-Count', count['count(*)']);
-  
+
     return response.json(ongs);
   }
 }

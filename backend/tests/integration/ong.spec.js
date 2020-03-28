@@ -12,7 +12,7 @@ describe('ONG', ()=> {
 
   // Finaliza a conexão com o banco de dados
   afterAll(async() => {
-    await connection.destroy();
+    await connection.destroy(); // Finaliza a conexão com o banco de dados
   });
 
 
@@ -24,6 +24,7 @@ describe('ONG', ()=> {
         name: "APAD",
         email: "contato@ong.com",
         whatsapp: "47000000000",
+        password: "12345678",
         city: "Rio do Sul",
         uf: "SC"
       });
