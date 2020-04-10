@@ -28,11 +28,15 @@ Ou
 ```bash 
 npm install
 ```
-4. Após para deixe o backend UP: Entre dentro da pasta do backend e execute o comando baixo:
+
+
+### Executando o backend
+- Após para deixe o backend UP: Entre dentro da pasta do backend e execute o comando baixo:
 ```bash
 yarn dev
 ```
-5. Com o backend rodando, você pode testar o frontend ou o mobile. 
+- Com o backend rodando, você pode testar o frontend ou o mobile. 
+
 
 ### Executando o frontend
 - Entre na pasta do frontend.
