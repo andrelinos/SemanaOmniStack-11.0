@@ -15,7 +15,7 @@ Esta aplicação desenvolvida com base em uma ideia que o Diego teve para uma ON
 adb reverse tcp:3333 tcp:3333
 ```
 
-## Para baixar, basta seguir os passos:
+## Para clonar o projeto, basta seguir os passos:
 1. Crie uma pasta qualquer em teu computador 
 2. Dê um git clone nesta como abaixo:
 ```bash 
