@@ -1,6 +1,7 @@
 # SemanaOmniStack-11.0
 
-
+## Descrição
+Esta aplicação desenvolvida com base em uma ideia que o Diego teve para uma ONG que cuida de animais feridos. No qual as ONGS podem cadastrar os casos e assim disponibilizar para que usuários da aplicação possam assumir os casos por estarem custeando o tratamento, como uma cirugia relacionado a um caso (incidente) específico. 
 
 ### Rotas
 **Backend**: http://localhost:3333 (ou ip da sua máquina local no lugar do localhost)
